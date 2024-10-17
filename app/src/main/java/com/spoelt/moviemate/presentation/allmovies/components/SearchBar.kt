@@ -33,6 +33,7 @@ fun SearchBar(
             onSearch(it)
         },
         placeholder = {
+            //REVIEW: design uses a fontSize of 14.sp
             Text(
                 text = stringResource(R.string.search_action),
                 color = Color.Gray
@@ -50,6 +51,7 @@ fun SearchBar(
                 tint = MaterialTheme.colors.onSurface.withAlpha(0.4f)
             )
         },
+        //REVIEW: design uses 16dp
         shape = RoundedCornerShape(12.dp)
     )
 }

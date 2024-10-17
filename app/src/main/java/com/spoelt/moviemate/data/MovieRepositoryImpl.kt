@@ -48,6 +48,8 @@ class MovieRepositoryImpl @Inject constructor(
                 _cachedMovies,
                 getFavoriteIds()
             ) { movies, favoriteIds ->
+                //REVIEW: toSet() serves no purpose here.
+                // could also just use favoriteIds.orEmpty() or favoriteIds ?: emptySet()
                 val favoritesSet = favoriteIds?.toSet() ?: emptySet()
                 movies?.map { movie ->
                     movie.copy(isFavorite = movie.id in favoritesSet)
@@ -138,6 +140,8 @@ class MovieRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getMovieDetail(id: Int): Flow<Movie?> = flow {
+        //REVIEW: could have reused getAllMovies (which already includes the favorite logic)
+        // to reduce copy pasting
         if (_cachedMovies.value.isNullOrEmpty()) {
             loadAllMovies()
         }
