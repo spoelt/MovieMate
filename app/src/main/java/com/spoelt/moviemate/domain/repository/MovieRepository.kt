@@ -5,6 +5,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 
 interface MovieRepository {
+    //REVIEW: could be removed from the interface
     val cachedStaffPicks: StateFlow<List<Movie>?>
     val cachedMovies: StateFlow<List<Movie>?>
 

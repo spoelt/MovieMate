@@ -52,7 +52,7 @@ private fun StarIcon(
     }
 
     Image(
-        modifier = Modifier.size(starSize),
+        modifier = Modifier.size(starSize), //REVIEW: the icons are not square, unfortunately
         painter = painterResource(id = imageResId),
         contentDescription = stringResource(id = contentDescId),
     )

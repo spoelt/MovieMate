@@ -41,6 +41,7 @@ fun Genres(
                     shape = RoundedCornerShape(50)
                 ) {
                     Text(
+                        //REVIEW: horizontal padding should be 8.dp
                         modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
                         text = genre,
                         style = MaterialTheme.typography.body2

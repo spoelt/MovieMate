@@ -38,6 +38,8 @@ class AllMoviesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val navController = findNavController()
+
+        //REVIEW: viewBinding would have been nice
         val progressBar = view.findViewById<View>(R.id.progress_bar)
         val moviesList = view.findViewById<ComposeView>(R.id.all_movies_list)
         val searchBar = view.findViewById<ComposeView>(R.id.all_movies_search_bar)

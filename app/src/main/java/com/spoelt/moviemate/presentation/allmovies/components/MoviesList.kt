@@ -47,6 +47,7 @@ fun MoviesList(
     }
 }
 
+//REVIEW: showBackground = true would improve the preview
 @Preview
 @Composable
 private fun MoviesListPreview() {

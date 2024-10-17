@@ -15,6 +15,9 @@ import javax.inject.Inject
 class AllMoviesViewModel @Inject constructor(
     private val movieRepository: MovieRepository
 ) : ViewModel() {
+    //REVIEW: instead of splitting loading & data it would be preferable
+    // to have a wrapper class which can either be Loading or Loaded
+    // that way it would also be easier to add error states later
     private val _isLoading = MutableStateFlow(true)
     val isLoading = _isLoading.asStateFlow()
 
